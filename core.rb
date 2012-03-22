@@ -1,7 +1,8 @@
 class Core < Sinatra::Base
   GITHUB = YAML.load_file(File.join(settings.root, 'config/github_key.yml'))
   Mongoid.load!(File.join(settings.root, 'config/mongoid.yml'))
-  
+
+  set :public_folder, Proc.new { File.join(root, "static") }  
   set :views, settings.root + '/app/views'
   set :slim, :pretty => true
   
@@ -25,9 +26,9 @@ class Core < Sinatra::Base
   end
   
   get '/auth/github/callback' do
-    Hacker.find_or_create_by(uid: request.env['omniauth.auth']['uid'],
+    Hacker.find_or_create_by uid: request.env['omniauth.auth']['uid'],
                              name: request.env['omniauth.auth']['info']['nickname'],
-                             email: request.env['omniauth.auth']['info']['email'])
+                             email: request.env['omniauth.auth']['info']['email']
     redirect '/'
   end
 
