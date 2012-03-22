@@ -21,4 +21,45 @@ html
 	              li
                   a href="/auth/github" login w github
   div class="container"
-    h3 twinslash hackday, bro
+    h1 = @target.what
+    p
+      img src="#{@target.pic}" height="300" width="600"
+    p 
+      h3
+        | WHO? 
+      = @target.who
+    p 
+      h3
+        | WHY?
+      = @target.why
+    p 
+      h3
+        | WHERE?
+        = @target.where
+    p 
+      h3
+        | HOW MUCH?
+      = @target.watch
+    p 
+      h3
+        | AND WHAT?
+      = @target.and_what
+    - if @bros.any?
+      hr
+      p
+        h3
+          | BROS
+        - @bros.each do |hacker|
+          img src="#{gravatar hacker.email}"
+    hr
+    p
+      h3
+        | WE DO
+      - we_do.each do |wd|
+        img src="#{wd}" height='80'
+    hr
+    div class='footer'
+     p
+       b
+         | only in
+         a href="http://twinslash.com"  twinslash
