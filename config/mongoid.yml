@@ -2,3 +2,5 @@ development:
   host: localhost
   database: bro_development
 
+production:
+  uri: <%= ENV['MONGOLAB_URI'] %>
