@@ -1,0 +1,7 @@
+h1 "You bro, #{Hacker.last.try(:name)}"
+a href='/auth/github'
+  | Sign in with github
+
+h2 Bros => 
+- Hacker.all.each do |hack|
+  img src="#{gravatar(hack.try(:email))}"

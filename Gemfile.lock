@@ -1,0 +1,68 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (3.2.2)
+      activesupport (= 3.2.2)
+      builder (~> 3.0.0)
+    activesupport (3.2.2)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    addressable (2.2.7)
+    bson (1.6.1)
+    builder (3.0.0)
+    daemons (1.1.8)
+    eventmachine (0.12.10)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
+    hashie (1.2.0)
+    i18n (0.6.0)
+    mongo (1.6.1)
+      bson (~> 1.6.1)
+    mongoid (2.4.7)
+      activemodel (~> 3.1)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
+    multi_json (1.1.0)
+    multipart-post (1.1.5)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+    omniauth (1.0.3)
+      hashie (~> 1.2)
+      rack
+    omniauth-github (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
+    rack (1.4.1)
+    rack-protection (1.1.4)
+      rack
+    sinatra (1.3.1)
+      rack (~> 1.3, >= 1.3.4)
+      rack-protection (~> 1.1, >= 1.1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    slim (1.1.1)
+      temple (~> 0.4.0)
+      tilt (~> 1.3.2)
+    temple (0.4.0)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.3.3)
+    tzinfo (0.3.32)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mongoid
+  omniauth
+  omniauth-github
+  sinatra
+  slim
+  thin
