@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 class Core < Sinatra::Base
   GITHUB = YAML.load_file(File.join(settings.root, 'config/github_key.yml'))
   Mongoid.load!(File.join(settings.root, 'config/mongoid.yml'))
@@ -15,9 +17,22 @@ class Core < Sinatra::Base
     def gravatar email
       "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}" if email
     end
+    
+    def we_do
+       %w(http://dl.dropbox.com/u/1723713/tdd.gif
+          http://dl.dropbox.com/u/1723713/bro.jpg
+          http://dl.dropbox.com/u/1723713/rails.png
+          http://dl.dropbox.com/u/1723713/ruby.png
+          http://dl.dropbox.com/u/1723713/coffeescript.jpg
+          http://dl.dropbox.com/u/1723713/github.png
+          http://dl.dropbox.com/u/1723713/nginx_main_logo.gif
+          http://dl.dropbox.com/u/1723713/girl_coffee.gif)
+    end
   end
   
   get '/' do
+    @target = Target.first
+    @bros = Hacker.all
     slim :home
   end
   
