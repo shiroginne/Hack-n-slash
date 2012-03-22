@@ -51,6 +51,10 @@ html
           | BROS
         - @bros.each do |hacker|
           img src="#{gravatar hacker.email}"
+          br
+          a href="http://github.com/#{hacker.name}"
+            | @
+            =hacker.name
     hr
     p
       h3
