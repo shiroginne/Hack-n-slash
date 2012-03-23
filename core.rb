@@ -41,10 +41,11 @@ class Core < Sinatra::Base
   end
   
   get '/auth/github/callback' do
-    Hacker.find_or_create_by uid: request.env['omniauth.auth']['uid'],
-                             name: request.env['omniauth.auth']['info']['nickname'],
-                             email: request.env['omniauth.auth']['info']['email']
+    hacker = Hacker.find_or_initialize_by uid: request.env['omniauth.auth']['uid']
+    hacker.name  = request.env['omniauth.auth']['info']['nickname']
+    hacker.email = request.env['omniauth.auth']['info']['email']
+    hacker.save!
+
     redirect '/'
   end
-
 end
