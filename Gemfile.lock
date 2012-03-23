@@ -9,6 +9,8 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.7)
     bson (1.6.1)
+    bson_ext (1.6.1)
+      bson (~> 1.6.1)
     builder (3.0.0)
     daemons (1.1.8)
     eventmachine (0.12.10)
@@ -60,6 +62,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   mongoid
   omniauth
   omniauth-github
