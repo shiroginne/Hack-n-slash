@@ -24,32 +24,14 @@ html
     h1 = @target.what
     p
       img src="#{@target.pic}" height="300" width="600"
-    p 
-      h3
-        | WHO? 
-      = @target.who
-    p 
-      h3
-        | WHY?
-      = @target.why
-    p 
-      h3
-        | WHERE?
-      = @target.where
-    p 
-      h3
-        | HOW MUCH?
-      = @target.watch
-    p 
-      h3
-        | AND WHAT?
-      = @target.and_what
+    - %w( who why where watch and_what).each do |w|
+      h3= w.upcase + "?"
+      p= @target.send(w)
     - if @bros.any?
       hr
-      p
-        h3
-          | BROS
-        - @bros.each do |hacker|
+      h3 BROS
+      - @bros.each do |hacker|
+        div class='bros'
           img src="#{gravatar hacker.email}"
           br
           a href="http://github.com/#{hacker.name}"
