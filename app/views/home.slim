@@ -31,7 +31,7 @@ html
       hr
       h3 BROS
       - @bros.each do |hacker|
-        div class='bros'
+        div class='bros' style='display: inline-block;'
           img src="#{gravatar hacker.email}"
           br
           a href="http://github.com/#{hacker.name}"
