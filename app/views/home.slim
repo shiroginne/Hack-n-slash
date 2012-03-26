@@ -20,6 +20,9 @@ html
 	            ul class="nav"
 	              li
                   a href="/auth/github" register with github
+                - if admin?
+                  li
+                    a href="/new_hackday" new hackday
   div class="container"
     h1 = @target.what
     p
