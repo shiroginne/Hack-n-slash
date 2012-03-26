@@ -8,7 +8,7 @@ html
     link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css"
 
     meta name="hackday"
-  
+
   body style="padding-top: 50px;"
 	  section id="navigation"
 	    div class="topbar-wrapper" style="z-index: 5;"
@@ -24,12 +24,13 @@ html
                   li
                     a href="/new_hackday" new hackday
   div class="container"
-    h1 = @target.what
+    h1 = @target.what if @target
     p
-      img src="#{@target.pic}" width="600"
-    - %w( who why where watch and_what).shuffle.each do |w|
-      h3= w.upcase + "?"
-      p= @target.send(w)
+      - if @target
+        img src="#{@target.pic}" width="600"
+        - %w( who why where watch and_what).shuffle.each do |w|
+          h3= w.upcase + "?"
+          p= @target.send(w)
     - if @bros.any?
       hr
       h3 BROS
