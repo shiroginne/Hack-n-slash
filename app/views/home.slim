@@ -24,7 +24,7 @@ html
     h1 = @target.what
     p
       img src="#{@target.pic}" height="300" width="600"
-    - %w( who why where watch and_what).each do |w|
+    - %w( who why where watch and_what).shuffle.each do |w|
       h3= w.upcase + "?"
       p= @target.send(w)
     - if @bros.any?
