@@ -15,7 +15,11 @@ class Core < Sinatra::Base
   
   helpers do
     def gravatar email
-      "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}" if email
+      if email
+        "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
+      else
+        "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm"
+      end
     end
     
     def we_do
