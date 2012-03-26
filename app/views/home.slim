@@ -3,6 +3,7 @@ html
   head
     title Its a hackday, bro
     script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    script src="http://konami-js.googlecode.com/svn/trunk/konami.js"
     script src="/lib/bootstrap/js/bootstrap-dropdown.js"
     script src="/lib/bootstrap/js/bootstrap-alerts.js"
     link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css"
@@ -53,3 +54,12 @@ html
        b
          | only in
          a href="http://twinslash.com"  twinslash
+  div class='konami-bro'
+    img src="https://p.twimg.com/AnzFTpQCIAAS9Rz.jpg:large"
+  script
+    |
+      konami = new Konami();
+      konami.code = function() {
+        $('div.konami-bro').css("display", "block");
+      }
+      konami.load();
