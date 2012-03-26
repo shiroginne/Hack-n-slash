@@ -14,6 +14,10 @@ class Core < Sinatra::Base
   end
   
   helpers do
+    def admin?
+      Hacker.order_by([:karma, :desc]).first.uid == session['hacker']
+    end
+    
     def gravatar email
       if email
         "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
@@ -40,16 +44,24 @@ class Core < Sinatra::Base
     slim :home
   end
   
+  get '/new_hackday' do
+    slim :new_hackday
+  end
+  
   get '/auth/failure' do
     "Not cool, bro"
   end
   
   get '/auth/github/callback' do
-    hacker = Hacker.find_or_initialize_by uid: request.env['omniauth.auth']['uid']
-    hacker.name  = request.env['omniauth.auth']['info']['nickname']
-    hacker.email = request.env['omniauth.auth']['info']['email']
-    hacker.save!
-
+    if hacker = Hacker.find_or_initialize_by(uid: request.env['omniauth.auth']['uid'])
+      session['hacker'] = request.env['omniauth.auth']['uid']
+    
+      hacker.name  = request.env['omniauth.auth']['info']['nickname']
+      hacker.email = request.env['omniauth.auth']['info']['email']
+      hacker.karma_point = 1
+      hacker.save!
+    end
+    
     redirect '/'
   end
 end
