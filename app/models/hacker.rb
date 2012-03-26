@@ -1,8 +1,8 @@
 class Hacker
   include Mongoid::Document
 
-  field :uid
-  field :name
-  field :email
+  field :uid, type: String
+  field :name, type: String
+  field :email, type: String
 
 end
