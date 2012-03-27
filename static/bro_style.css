@@ -2,3 +2,7 @@
   display: inline-block;
   margin-right: 10px;
 }
+
+div.konami-bro {
+  display: none;
+}
