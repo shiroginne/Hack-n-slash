@@ -15,7 +15,7 @@ class Core < Sinatra::Base
 
   helpers do
     def admin?
-      (hacker = Hacker.order_by([:karma, :desc]).first) && hacher.uid == session['hacker']
+      (hacker = Hacker.order_by([:karma, :desc]).first) && hacker.uid == session['hacker']
     end
 
     def gravatar email
