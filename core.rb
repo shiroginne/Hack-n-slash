@@ -39,7 +39,7 @@ class Core < Sinatra::Base
   end
 
   get '/' do
-    @target = Target.first
+    @target = Target.last || Target.new(date: Date.today)
     @bros = Hacker.all
     slim :home
   end
