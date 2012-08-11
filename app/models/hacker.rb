@@ -6,5 +6,6 @@ class Hacker
   field :email, type: String
   field :karma, type: Integer, default: Random.rand(10)
   field :karma_point, type: Integer
-
+  
+  has_many :speeches, dependent: :delete
 end

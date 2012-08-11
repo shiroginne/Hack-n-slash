@@ -6,5 +6,5 @@ class Target
   end
   field :date, type: Date
   
-  
+  has_many :speeches
 end
