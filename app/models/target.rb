@@ -1,7 +1,10 @@
 class Target
   include Mongoid::Document
 
-  %w(pic what who why where watch and_what when).each do |fname|
+  %w(pic description).each do |fname|
     field fname.to_sym, type: String
   end
+  field :date, type: Date
+  
+  
 end
