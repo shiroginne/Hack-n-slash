@@ -4,62 +4,25 @@ html
     title Its a hackday, bro
     script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
     script src="http://konami-js.googlecode.com/svn/trunk/konami.js"
-    script src="/lib/bootstrap/js/bootstrap-dropdown.js"
-    script src="/lib/bootstrap/js/bootstrap-alerts.js"
-    link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css"
+    script src="/lib/bootstrap/js/bootstrap.min.js"
+    link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"
     link rel="stylesheet" href="/bro_style.css"
     meta name="hackday"
 
-  body style="padding-top: 50px;"
-	  section id="navigation"
-	    div class="topbar-wrapper" style="z-index: 5;"
-	      div class="topbar" data-dropdown="dropdown"
-	        div class="topbar-inner"
-	          div class="container"
-	            h3
-                  a href="/" Hackday
-	            ul class="nav"
-	              li
-                  a href="/auth/github" register with github
-                - if admin?
-                  li
-                    a href="/new_hackday" new hackday
-  div class="container"
-    h1 = @target.what if @target
-    p
-      - if @target
-        img src="#{@target.pic}" width="600"
-        - %w( who why where watch and_what).shuffle.each do |w|
-          h3= w.upcase + "?"
-          p= @target.send(w)
-    - if @bros.any?
-      hr
-      h3 BROS
-      - @bros.each do |hacker|
-        div class='bros' style='display: inline-block;'
-          img src="#{gravatar hacker.email}"
-          br
-          a href="http://github.com/#{hacker.name}"
-            | @
-            =hacker.name
-    hr
-    p
-      h3
-        | WE DO
-      - we_do.each do |wd|
-        img src="#{wd}" height='80'
-    hr
-    div class='footer'
-     p
-       b
-         | only in
-         a href="http://twinslash.com"  twinslash
-  div class='konami-bro'
-    img src="https://p.twimg.com/AnzFTpQCIAAS9Rz.jpg:large"
-  script
-    |
-      konami = new Konami();
-      konami.code = function() {
-        $('div.konami-bro').css("display", "block");
-      }
-      konami.load();
+  body
+    div class="container"
+      header class='jumbotron subhead' id='overview'
+        h1= @target.date
+        p.lead conferences made easy
+      == render :slim, :'we_do'
+
+      div class='footer'
+    div class='konami-bro'
+      img src="https://p.twimg.com/AnzFTpQCIAAS9Rz.jpg:large"
+    script
+      |
+        konami = new Konami();
+        konami.code = function() {
+          $('div.konami-bro').css("display", "block");
+        }
+        konami.load();
