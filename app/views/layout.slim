@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Its a hackday, bro
+    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    script src="http://konami-js.googlecode.com/svn/trunk/konami.js"
+    script src="/lib/bootstrap/js/bootstrap.min.js"
+    link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"
+    link rel="stylesheet" href="/bro_style.css"
+    meta name="hackday"
+
+  body
+    div class="container"
+      == render :slim, :'header'
+      == yield
+      == render :slim, :'footer'
+      == render :slim, :'we_do'
+      == render :slim, :'konami'

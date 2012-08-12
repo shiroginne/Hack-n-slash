@@ -1,0 +1,9 @@
+div class='konami-bro'
+  img src="https://p.twimg.com/AnzFTpQCIAAS9Rz.jpg:large"
+script
+  |
+    konami = new Konami();
+    konami.code = function() {
+      $('div.konami-bro').css("display", "block");
+    }
+    konami.load();

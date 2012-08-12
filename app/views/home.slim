@@ -1,26 +1,2 @@
-doctype html
-html
-  head
-    title Its a hackday, bro
-    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-    script src="http://konami-js.googlecode.com/svn/trunk/konami.js"
-    script src="/lib/bootstrap/js/bootstrap.min.js"
-    link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"
-    link rel="stylesheet" href="/bro_style.css"
-    meta name="hackday"
-
-  body
-    div class="container"
-      == render :slim, :'header'
-      == render :slim, :'we_do'
-
-      div class='footer'
-    div class='konami-bro'
-      img src="https://p.twimg.com/AnzFTpQCIAAS9Rz.jpg:large"
-    script
-      |
-        konami = new Konami();
-        konami.code = function() {
-          $('div.konami-bro').css("display", "block");
-        }
-        konami.load();
+h1= @target.date
+p.lead= @target.description
