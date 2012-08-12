@@ -46,6 +46,9 @@ class Core < Sinatra::Base
 
   get '/new_hackday' do
     slim :new_hackday
+  post '/new_target' do
+    @target = Target.create(params)
+    slim :home
   end
 
   get '/auth/failure' do
