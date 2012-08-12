@@ -44,8 +44,11 @@ class Core < Sinatra::Base
     slim :home
   end
 
-  get '/new_hackday' do
-    slim :new_hackday
+  get '/new_target' do
+    @target = Target.new
+    slim :new_target
+  end
+  
   post '/new_target' do
     @target = Target.create(params)
     slim :home
