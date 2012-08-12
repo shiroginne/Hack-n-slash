@@ -11,9 +11,7 @@ html
 
   body
     div class="container"
-      header class='jumbotron subhead' id='overview'
-        h1= @target.date
-        p.lead conferences made easy
+      == render :slim, :'header'
       == render :slim, :'we_do'
 
       div class='footer'
