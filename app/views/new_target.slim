@@ -1,8 +1,8 @@
 form(action='/new_target' method='POST' class='well')
-  'Name
+  label Name
   input(type='text' name='name')
-  'Description
-  input(type='text' name='description')
-  'Time
+  label Description
+  textarea(name='description' class='input-xlarge')
+  label Time
   input(type='date' name='date')
-  input(type='submit')
+  button(type='submit' class='btn')Submit
