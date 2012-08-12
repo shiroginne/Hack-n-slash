@@ -7,5 +7,6 @@ Bundler.require
 
 require './core'
 require './app/models/hacker'
+require './app/models/speech'
 require './app/models/target'
 run Core
