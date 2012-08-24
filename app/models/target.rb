@@ -7,4 +7,5 @@ class Target
   field :date, type: Date
   
   has_many :speeches
+  has_many :hackers
 end
