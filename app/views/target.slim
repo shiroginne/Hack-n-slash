@@ -1,6 +1,4 @@
 h1 = "#{@target.name} @ #{@target.date}"
 p = @target.description
 - @target.speeches.each do |speech|
-  = speech.name
-  = speech.description
-  = speech.hacker
+  = render :slim, :'speech', speech: speech
