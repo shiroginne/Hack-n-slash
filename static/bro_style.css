@@ -39,6 +39,10 @@ body {
 	padding: 20px 0;
 }
 
+.new_target {
+	text-align: center;
+}
+
 .description {
 	background-color: (@whiteSmoke);
 	height: 100%;

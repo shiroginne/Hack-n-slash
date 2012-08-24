@@ -1,8 +1,15 @@
-form(action='/new_target' method='POST' class='well')
-  label Name
-  input(type='text' name='name')
-  label Description
-  textarea(name='description' class='input-xlarge')
-  label Time
-  input(type='date' name='date')
-  button(type='submit' class='btn')Submit
+.container.well.new_target
+  form(action='/new_target' method='POST')
+    legend New hackday or party
+    .control-group
+      label.control-label(for='name') Name
+      input(type='text' name='name' class='controls input-xxlarge')
+    .control-group
+      label.control-label(for='description') Description
+      textarea(name='description' class='controls input-xxlarge' rows="8")
+    .control-group
+      label.control-label(for='time') Time
+      input(type='date' name='date' class='controls input-xxlarge')
+    .control-group
+      .controls
+        button(type='submit' class='btn')Submit
