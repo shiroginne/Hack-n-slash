@@ -1,3 +1,11 @@
 Организатор хэкдей локально!
 
 Ideas and pull-requests are welcome! =^_^=
+
+TODO:
+- Change mock button to real one (github registration)
+- Make list for speakers and listeners
+- Add roles: hacker, lamer
+- Add ability to set current target
+- Add targets history
+- Add Image to target
