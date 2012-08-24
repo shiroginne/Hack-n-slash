@@ -10,9 +10,6 @@ html
     meta name="hackday"
 
   body
-    div class="container"
-      == render :slim, :'header'
+    div class="container-fluid"
       == yield
-      == render :slim, :'footer'
-      == render :slim, :'we_do'
-      == render :slim, :'konami'
+	== render :slim, :'konami'

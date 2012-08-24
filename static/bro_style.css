@@ -1,11 +1,5 @@
-.bros {
-  display: inline-block;
-  margin-right: 10px;
-}
+html, body { height: 100%; }
 
-div.konami-bro {
-  display: none;
-}
 body {
 	background:
 		-webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
@@ -16,4 +10,31 @@ body {
 		-webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
 	background-color: #131313;
 	background-size: 20px 20px;
-	}
+}
+
+.container-fluid {
+	height: 100%;
+}
+
+.row-fluid {
+	height: 100%;
+}
+
+.bros {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.image {
+	background-color: white;
+	height: 100%;
+}
+
+.target {
+	padding: 20px 0;
+}
+
+div.konami-bro {
+  display: none;
+}
+
