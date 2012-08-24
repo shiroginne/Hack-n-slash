@@ -1,4 +1,7 @@
-h1 = "#{@target.name} @ #{@target.date}"
-p = @target.description
-- @target.speeches.each do |speech|
-  = render :slim, :'speech', speech: speech
+.target
+  h1 = "#{@target.name} @ #{@target.date}"
+  p = @target.description
+  - @target.speeches.each do |speech|
+    = render :slim, :'speech', speech: speech
+.participate
+  .btn.btn-primary Join event
